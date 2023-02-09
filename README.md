@@ -10,8 +10,12 @@ Figure out by any means necessary what's going wrong in our app!  You're our onl
 ## Caveat
 Josh has accidentally erased the .git folder and all distributed copies of the app have been discarded.  Version Control is not able to save us now.  We must rely on our wits alone!
 
+## Installation
+```bash
+npm install
+```
 ## To run app
 ```bash
 npm run dev
 ```
-then open http://localhost:5173/ on your favorite browser.
+then open http://localhost:5173/ on your favorite browser.  Open this folder in your favorite IDE and edit any file and save, results immediately show up on your browser.  Try `src/App.tsx` as a start.

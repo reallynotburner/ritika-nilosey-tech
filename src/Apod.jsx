@@ -1,23 +1,24 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios';
+import { useEffect, useState, Suspense } from 'react'
+import getPromiseToFetchUrl from './getPromiseToFetchUrl';
 
-function Apod() {
-  const [url, setUrl] = useState('');
-  useEffect(() => {
-    async function fetchApod() {
-      const { data } = await axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
-      console.log(data);
-      setUrl(data.url);
-    }
+export function ApodSuspenseWrapper() {
+  const urlToApod = getPromiseToFetchUrl('https://api.nasa.gov/planetary/apod?api_key=fVyaH1PohPwlzCJOr4QRa45MbA4xcLj16lJ7VSIL');
+  
+  console.log(`URL to APOD: ${urlToApod}`);
+  
+  return (
+    <Suspense fallback={<div>Loading Your Astronomy Picture of the Day! ...</div>}>
+      <Apod resource={urlToApod}/>
+    </Suspense>
+  )
+}
 
-    fetchApod();
-  }, []);
-
+export function Apod({resource}) {
   return (
     <div className='apod-image'>
-      <img src={url}></img>
+      <img src={resource}></img>
     </div>
   )
 }
 
-export default Apod
+export default ApodSuspenseWrapper

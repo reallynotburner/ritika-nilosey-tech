@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Apod from "./Apod"
-
+import ApodSuspenseWrapper from "./Apod"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,8 +9,7 @@ function App() {
     <div className="App">
 
       <h1>Powered by Rikita...</h1>
-      <button onClick={() => {alert('click')}}>GIMMIE</button>
-      <Apod />
+      <ApodSuspenseWrapper />
     </div>
   )
 }

@@ -3,9 +3,7 @@ import getPromiseToFetchUrl from './getPromiseToFetchUrl';
 
 export function ApodSuspenseWrapper() {
   const urlToApod = getPromiseToFetchUrl('https://api.nasa.gov/planetary/apod?api_key=fVyaH1PohPwlzCJOr4QRa45MbA4xcLj16lJ7VSIL');
-  
-  console.log(`URL to APOD: ${urlToApod}`);
-  
+    
   return (
     <Suspense fallback={<div>Loading Your Astronomy Picture of the Day! ...</div>}>
       <Apod resource={urlToApod}/>

@@ -1,15 +1,13 @@
-import { useState } from 'react'
 import './App.css'
 import ApodSuspenseWrapper from "./Apod"
+import Tracker from './Tracker';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-
       <h1>Powered by Rikita...</h1>
       <ApodSuspenseWrapper />
+      <Tracker />
     </div>
   )
 }

@@ -20,21 +20,12 @@ export function Apod() {
 
   
   return (
-
-
-  urlToApod
-    ? <div className='apod-image'>
-    <img src={urlToApod}></img>
-  </div>
-    : <h2>Loading Your Astronomy Picture of the Day! ...</h2>
+    urlToApod
+      ? <div className='apod-image'>
+          <img src={urlToApod}></img>
+        </div>
+      : <h2>Loading Your Astronomy Picture of the Day! ...</h2>
   )
 }
-/*
-  return (
-    <div className='apod-image'>
-      <img src={urlToApod}></img>
-    </div>
-  )
-*/
 
 export default ApodSuspenseWrapper

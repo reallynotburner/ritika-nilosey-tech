@@ -12,7 +12,7 @@ export function ApodSuspenseWrapper() {
 export function Apod() {
   const [urlToApod, setUrlToApod] = useState(null);
 
-  const url = fetchUrl('https://api.nasa.gov/planetary/apod?api_key=fVyaH1PohPwlzCJOr4QRa45MbA4xcLj16lJ7VSIL');
+  const url = fetchUrl('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
 
   useEffect(() => {
     setUrlToApod(url);

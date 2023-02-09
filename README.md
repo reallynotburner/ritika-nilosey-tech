@@ -19,3 +19,9 @@ npm install
 npm run dev
 ```
 then open http://localhost:5173/ on your favorite browser.  Open this folder in your favorite IDE and edit any file and save, results immediately show up on your browser.  Try `src/App.tsx` as a start.
+
+## To Deploy
+```bash
+npm run build
+```
+then you have a static export in the `dist` folder, minified and uglified for absolute minimum code size.

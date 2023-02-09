@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-export default function getPromiseToFetchUrl(apodApiUrl) {
+export default function fetchUrl(apodApiUrl) {
     const [url, setUrl] = useState('');
-    const [laterUrl, setLaterUrl] = useState('');
+    const [laterUrl, setLaterUrl] = useState(null);
     
     useEffect(() => {
         const timer = setTimeout(() => {
             setLaterUrl(url);
-        }, 2000);
+        }, 5000);
         return () => clearTimeout(timer);
-    }, []);
+    }, [url]);
 
     useEffect(() => {
       async function fetchApod() {
@@ -19,7 +19,7 @@ export default function getPromiseToFetchUrl(apodApiUrl) {
       }
   
       fetchApod();
-    }, [url]);
+    }, []);
 
     return laterUrl;
 }
